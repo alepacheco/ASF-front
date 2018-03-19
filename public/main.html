@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Searcher</title>
+  <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.core.js"></script>
+  <link rel="stylesheet" href="./main.css" >
+  <script src="./main.js"></script>
+
+</head>
+<body>
+  <h1 class="display-2">Google for flights</h1>
+  <p class="h3">Demo of natural language flights query parser</p>
+  <center>
+    <input type="text" name="fname" class="form-control field-input" placeholder="Find flights from barcelona to madrid for next sunday..." id="inputField">
+  </center><br>
+  <center>
+    <button type="button" id="search" class="btn btn-primary btn-lg button" onclick="search()">Search</button>
+  </center>
+  <br>
+  <br>
+  <br>
+  
+  <div class="display-4" id="results">Parsed string will be displayed here</div>
+</body>
+</html>
