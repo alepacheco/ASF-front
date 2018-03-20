@@ -10,14 +10,23 @@ function search() {
     success: function(response) {
       $("#results").text(`Searching flights from: ${response.departure} to: ${response.destination} on: ${response.departureDate} at: ${response.departureTime}` );
       if (response.departure && response.destination && response.departureDate) {
+        $("#results").text('Redirecting');
         const edreamsUrl = `https://www.edreams.com/#/results/type=O;dep=${response.departureDate};from=${response.departure};to=${response.destination}`;
         window.location.replace(edreamsUrl);
+      }
+      else if (response.destination && response.departureDate) {
+        $("#results").text('Geolocating');
+        $.ajax({url: "/geo", success: function(departure){
+          const edreamsUrl = `https://www.edreams.com/#/results/type=O;dep=${response.departureDate};from=${departure};to=${response.destination}`;
+          window.location.replace(edreamsUrl);
+        }});
       }
     },
     error: function(xhr) {
       //Do Something to handle error
     }
   });
+
 }
 
 function startDictation() {
