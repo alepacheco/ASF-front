@@ -9,6 +9,7 @@
   src="https://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.core.js"></script>
   <link rel="stylesheet" href="./main.css" >
@@ -16,18 +17,25 @@
 
 </head>
 <body>
-  <h1 class="display-2">Google for flights</h1>
-  <p class="h3">Demo of natural language flights query parser</p>
   <center>
-    <input type="text" name="fname" class="form-control field-input" placeholder="Find flights from barcelona to madrid for next sunday..." id="inputField">
-  </center><br>
-  <center>
+    <h2>Google for flights</h2>
+    <p class="h4">Demo of natural language flights query parser</p>
+    <div class="row">
+      <input type="text" name="fname" class="form-control field-input" placeholder="Find flights from barcelona to madrid for next sunday..." id="inputField">
+      <button type="button" id="search" class="btn btn-primary mic-input" onclick="startDictation()"><i class="fas fa-microphone"></i></button>
+    </div>
+    <br>
     <button type="button" id="search" class="btn btn-primary btn-lg button" onclick="search()">Search</button>
+
   </center>
   <br>
   <br>
   <br>
-  
-  <div class="display-4" id="results">Parsed string will be displayed here</div>
+
+  <div id="overlay">
+    <div id="text">Listening...</div>
+  </div>
+
+  <div id="results"></div>
 </body>
 </html>
