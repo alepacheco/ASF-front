@@ -8,10 +8,10 @@ function search() {
       q: $('#inputField').val()
     },
     success: function(response) {
-      $("#results").text(`Searching flights from: ${response.departure} to: ${response.destination} on: ${response.departureDate} at: ${response.departureTime}` );
-      if (response.departure && response.destination && response.departureDate) {
+      $("#results").text(`Searching flights from: ${response.departure} to: ${response.destination} on: ${response.departure_date} at: ${response.departure_time}` );
+      if (response.departure && response.destination && response.departure_date) {
         $("#results").text('Redirecting');
-        const edreamsUrl = `https://www.edreams.com/#/results/type=O;dep=${response.departureDate};from=${response.departure};to=${response.destination}`;
+        const edreamsUrl = `https://www.edreams.com/#/results/type=O;dep=${response.departure_date};from=${response.departure};to=${response.destination}`;
         window.location.replace(edreamsUrl);
       }
       else if (response.destination && response.departureDate) {
