@@ -8,7 +8,7 @@ var app = express();
 app.listen(80);
 app.use(express.static('public'));
 app.get('/parse', async function(req, res, next) {
-  const response = await fetch('http://35.225.108.19:5000/parse', { method: 'POST', body: req.query.q });
+  const response = await fetch('http://localhost:5000/parse', { method: 'POST', body: req.query.q });
   res.send(await response.json());
 });
 

@@ -14,7 +14,7 @@ function search() {
         const edreamsUrl = `https://www.edreams.com/#/results/type=O;dep=${response.departure_date};from=${response.departure};to=${response.destination}`;
         window.location.replace(edreamsUrl);
       }
-      else if (response.destination && response.departureDate) {
+      else if (response.destination && response.departure_date) {
         $("#results").text('Geolocating');
         $.ajax({url: "/geo", success: function(departure){
           const edreamsUrl = `https://www.edreams.com/#/results/type=O;dep=${response.departureDate};from=${departure};to=${response.destination}`;
