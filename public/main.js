@@ -3,8 +3,10 @@ function evaluateText() {
     $("#results").text(JSON.stringify(response));
   })
 }
+let geolocation = '';
 
-$(document).ready(function () {
+$(document).ready(async function () {
+  geolocation = await $.ajax({url: "/geo"});
   $("#inputField").keyup(function (e) {
     if (e.keyCode == 13) {
       search();
@@ -14,7 +16,7 @@ $(document).ready(function () {
 
 async function makeUrl(params) {
   if (!params.departure) {
-    params.departure = await $.ajax({url: "/geo"});
+    params.departure = geolocation;
   }
   if (params.departure_date && params.return_date && params.destination) {
     return `https://www.edreams.com/#/results/type=R;dep=${params.departure_date};from=${params.departure};to=${params.destination};ret=${params.return_date}`
