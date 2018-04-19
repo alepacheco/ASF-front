@@ -5,13 +5,13 @@ function evaluateText() {
 }
 let geolocation = '';
 
-$(document).ready(async function () {
-  geolocation = await $.ajax({url: "/geo"});
+$(document).ready(function () {
   $("#inputField").keyup(function (e) {
     if (e.keyCode == 13) {
       search();
     }
   });
+  $.ajax({url: "/geo"}).done(function (x) {geolocation = x});
 });
 
 async function makeUrl(params) {
