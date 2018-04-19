@@ -4,6 +4,14 @@ function evaluateText() {
   })
 }
 
+$(document).ready(function () {
+  $("#inputField").keyup(function (e) {
+    if (e.keyCode == 13) {
+      search();
+    }
+  });
+});
+
 async function makeUrl(params) {
   if (!params.departure) {
     params.departure = await $.ajax({url: "/geo"});
