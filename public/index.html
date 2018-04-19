@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>eDreams Search</title>
+  <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="main.css">
+  <link rel="icon" href="https://a1.odistatic.net/images/onefront/bluestone/ED/favicon.ico">
+  <script src="./main.js"></script>
+</head>
+<body>
+
+  <div class="logo-wrapper">
+    <center>
+      <img class="center logo" src="http://travelgurureviews.com/wp-content/uploads/2016/12/eDreams-Online-Travel-Agency-Reviews-eDreams-logo.png" alt="">
+    </center>
+  </div>
+  <div class="box center">
+    <div class="input-wrapper">
+      <div class="relative">
+        <input type="text" id="inputField" class="inputField" value="">
+      </div>
+    </div>
+    <!-- <div class="mic-wrapper">
+      <div class="mic-icon"></div>
+    </div> -->
+  </div>
+  <center>
+    <div class="buttons center">
+      <input value="Search" type="submit" class="button center" onclick="search()">
+      <input value="Evaluate" type="submit" class="button center" id="eval-btn" onclick="evaluateText()">
+    </div>
+  </center>
+  <center>
+    <h2 id="results"></h2>
+  </center>
+
+</body>
+</html>
