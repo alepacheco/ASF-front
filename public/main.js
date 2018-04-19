@@ -36,7 +36,7 @@ function openInNewTab(url) {
   try {
     window.open(url, '_blank').focus();
   } catch (e) {
-    window.location.href = url,
+    window.location.href = url;
   }
 }
 
