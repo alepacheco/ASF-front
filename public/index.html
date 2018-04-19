@@ -23,12 +23,10 @@
   <div class="box center">
     <div class="input-wrapper">
       <div class="relative">
-        <input type="text" id="inputField" class="inputField" value="">
+        <input type="text" id="inputField" class="input-field" value="">
+          <div class="mic-icon" onclick="startDictation()"></div>
       </div>
     </div>
-    <!-- <div class="mic-wrapper">
-      <div class="mic-icon"></div>
-    </div> -->
   </div>
   <center>
     <div class="buttons center">
@@ -39,6 +37,10 @@
   <center>
     <h2 id="results"></h2>
   </center>
+
+  <div id="overlay">
+    <div id="text">Listening...</div>
+  </div>
 
 </body>
 </html>

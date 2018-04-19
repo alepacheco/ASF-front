@@ -1,4 +1,4 @@
-.inputField {
+.input-field {
   border: none;
   padding: 0px;
   margin: 0px;
@@ -11,6 +11,7 @@
   font: 16px arial,sans-serif;
   line-height: 34px;
   height: 34px !important;
+  flex: 1;
 }
 .box {
   max-width: 484px;
@@ -23,6 +24,7 @@
 }
 .relative {
   position: relative;
+  display: flex;
 }
 
 .input-wrapper {
@@ -81,20 +83,37 @@
   height: 23px;
   width: 18px;
   vertical-align: middle;
+  margin-top: 5px;
 }
 
 .inline {
   display: inline;
 }
 
-.mic-wrapper {
-  color: #609;
-  text-align: center;
-  width: 24px;
-  padding: 0 8px;
-  cursor: pointer;
-  padding: 0 4px;
-  display: inline-block;
-  color: #1a0dab;
-  text-decoration: none;
+
+
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#text{
+    position: absolute;
+    font-family: arial,sans-serif;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
 }

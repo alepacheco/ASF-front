@@ -1,25 +1,3 @@
-
-// function(response) {
-//   $("#results").text(`Searching flights from: ${response.departure} to: ${response.destination} on: ${response.departure_date} at: ${response.departure_time}` );
-//   if (response.departure && response.destination && response.departure_date && response.return_date) {
-//     $("#results").text('Return trip');
-//     const edreamsUrl = `https://www.edreams.com/#/results/type=R;dep=${response.departure_date};from=${response.departure};to=${response.destination};ret=${response.return_date}`
-//     window.location.replace(edreamsUrl);
-//   }
-//   else if (response.departure && response.destination && response.departure_date ) {
-//     $("#results").text('OW trip');
-//     const edreamsUrl = `https://www.edreams.com/#/results/type=O;dep=${response.departure_date};from=${response.departure};to=${response.destination}`;
-//     window.location.replace(edreamsUrl);
-//   }
-//   else if (response.destination && response.departure_date) {
-//     $("#results").text('Geolocating');
-//     $.ajax({url: "/geo", success: function(departure){
-//       const edreamsUrl = `https://www.edreams.com/#/results/type=O;dep=${response.departureDate};from=${departure};to=${response.destination}`;
-//       //window.location.replace(edreamsUrl);
-//     }});
-//   }
-// }
-
 function evaluateText() {
   searchApi(function(response) {
     $("#results").text(JSON.stringify(response));
@@ -65,9 +43,6 @@ function searchApi(callback) {
     }
   });
 }
-
-
-
 
 function startDictation() {
   const showListeningOverlay = function() {
