@@ -9,7 +9,7 @@ var request = require("request");
 app.listen(80);
 app.use(express.static('public'));
 app.get('/parse', async function(req, res, next) {
-  const response = await fetch('http://localhost:5000/parse', { method: 'POST', body: req.query.q });
+  const response = await fetch('http://flightassistant.epqm6t53rt.eu-west-1.elasticbeanstalk.com/parse', { method: 'POST', body: req.query.q });
   res.send(await response.json());
 });
 
