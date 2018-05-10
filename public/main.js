@@ -14,7 +14,7 @@ $(document).ready(function () {
   $.ajax({url: "/geo"}).done(function (x) {geolocation = x});
 });
 
-async function makeUrl(params) {
+function makeUrl(params) {
   if (!params.departure) {
     params.departure = geolocation;
   }
@@ -22,14 +22,21 @@ async function makeUrl(params) {
     return `https://www.edreams.com/#/results/type=R;dep=${params.departure_date};from=${params.departure};to=${params.destination};ret=${params.return_date}`
   } else if (params.departure_date && params.destination) {
     return `https://www.edreams.com/#/results/type=O;dep=${params.departure_date};from=${params.departure};to=${params.destination}`
+  } else {
+    let base = 'https://www.edreams.es/#/home/';
+    base += params.return_date ? `type=R;ret=${params.return_date};` : 'type=O;';
+    base += params.departure_date ? `dep=${params.departure_date};` : '';
+    base += params.destination ? `to=${params.destination};` : '';
+    base += params.departure ? `from=${params.departure};` : '';
+    return base;
   }
 }
 
 function search() {
-  searchApi(async function(response) {
-    const url = await makeUrl(response);
+  searchApi(function(response) {
+    const url = makeUrl(response);
     openInNewTab(url);
-  })
+  });
 }
 
 function openInNewTab(url) {
