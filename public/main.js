@@ -75,16 +75,20 @@ function startDictation() {
   if (window.hasOwnProperty('webkitSpeechRecognition')) {
     var recognition = new webkitSpeechRecognition();
     recognition.continuous = false;
-    recognition.interimResults = false;
+    recognition.interimResults = true;
     recognition.lang = "en-US";
     recognition.start();
     showListeningOverlay();
 
     recognition.onresult = function(e) {
-      document.getElementById('inputField').value = e.results[0][0].transcript;
-      recognition.stop();
-      hideListeningOverlay();
-      search();
+      const result = e.results[0];
+      document.getElementById('inputField').value = result[0].transcript;
+      if (result.isFinal) {
+        recognition.stop();
+        hideListeningOverlay();
+        search();
+      }
+
     };
     recognition.onerror = function(e) {
       recognition.stop();
