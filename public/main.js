@@ -40,8 +40,11 @@ function search() {
 }
 
 function openInNewTab(url) {
-  var win = window.open(url, '_blank');
-  win.focus();
+  try {
+    window.open(url, '_blank').focus();
+  } catch (e) {
+    window.location.href = url;
+  }
 }
 
 
