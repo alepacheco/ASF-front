@@ -6,6 +6,10 @@ function evaluateText() {
 let geolocation = '';
 
 $(document).ready(function () {
+  if (!window.hasOwnProperty('webkitSpeechRecognition')) {
+    $('.mic-icon').hide();
+  }
+
   $("#inputField").keyup(function (e) {
     if (e.keyCode == 13) {
       search();
