@@ -14,8 +14,10 @@ app.get('/parse', async function(req, res, next) {
 });
 
 app.get('/geo', async function(req, res, next) {
-  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  ip = ip.split(',')[0];
   const response = await fetch('http://ip-api.com/json/' + ip);
+
   const jsonResponse = await response.json();
   try {
     getIata(await jsonResponse.city, res);
