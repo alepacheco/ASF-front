@@ -1,6 +1,26 @@
 function evaluateText() {
   searchApi(function(response) {
-    $("#results").text(JSON.stringify(response));
+    if (response.departure || geolocation) {
+      $("#res-dep").text(response.departure || geolocation);
+      $("#results-dep").show();
+    } else {
+      $("#results-dep").hide();
+    }
+
+    if (response.destination) {
+      $("#res-des").text(response.destination);
+      $("#results-des").show();
+    } else {
+      $("#results-des").hide();
+    }
+
+    if (response.departure_date) {
+      $("#res-date").text(response.departure_date);
+      $("#results-date").show();
+    } else {
+      $("#results-date").hide();
+    }
+
   })
 }
 let geolocation = '';
