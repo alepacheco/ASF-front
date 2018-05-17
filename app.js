@@ -6,7 +6,7 @@ var express = require('express');
 var app = express();
 var request = require("request");
 
-app.listen(80);
+app.listen(process.env.PORT);
 app.use(express.static('public'));
 app.get('/parse', async function(req, res, next) {
   const response = await fetch('http://flightassistant.epqm6t53rt.eu-west-1.elasticbeanstalk.com/parse', { method: 'POST', body: req.query.q });
