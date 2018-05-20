@@ -79,6 +79,11 @@
   font: 16px arial,sans-serif;
   line-height: 34px;
   opacity: 0.5;
+  display: inline;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 95%;
+  white-space: nowrap;
 }
 
 .mic-icon {
