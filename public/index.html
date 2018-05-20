@@ -8,10 +8,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="./main.css">
   <link rel="icon" href="https://a1.odistatic.net/images/onefront/bluestone/ED/favicon.ico">
+  <link rel="stylesheet" href="./libs/morphext.css">
+  <link rel="stylesheet" href="./libs/animate.css">
   <script src="./main.js"></script>
+  <script src="./libs/morphext.min.js"></script>
 </head>
 <body>
-
   <div class="logo-wrapper">
     <center>
       <img class="center logo" src="./logo.png" alt="">
@@ -20,6 +22,8 @@
   <div class="box center">
     <div class="input-wrapper">
       <div class="relative">
+        <span class="placeholder hidden"><span id="js-rotating">Flights to Madrid for tomorrow, Show me offers to New York for October 25th to October 30th, Trip to Sevilla from June 6th to June 18th, Flights to JFK for this friday returning Sunday</span></span>
+
         <input type="text" id="inputField" class="input-field" value="">
           <div class="mic-icon" onclick="startDictation()"></div>
       </div>
@@ -36,6 +40,7 @@
       <h2 class="text-left hidden" id="results-dep">Departure: <div class="inline res" id="res-dep"></div></h2>
       <h2 class="text-left hidden" id="results-des">Destination: <div class="inline res" id="res-des"></div></h2>
       <h2 class="text-left hidden" id="results-date">Date: <div class="inline res" id="res-date"></div></h2>
+      <h2 class="text-left hidden" id="results-date-r">Date return: <div class="inline res" id="res-date-r"></div></h2>
     </div>
   </center>
 

@@ -21,6 +21,13 @@ function evaluateText() {
       $("#results-date").hide();
     }
 
+    if (response.return_date) {
+      $("#res-date-r").text(response.return_date);
+      $("#results-date-r").show();
+    } else {
+      $("#results-date-r").hide();
+    }
+
   })
 }
 let geolocation = '';
@@ -36,6 +43,23 @@ $(document).ready(function () {
     }
   });
   $.ajax({url: "/geo"}).done(function (x) {geolocation = x});
+
+  $("#js-rotating").Morphext({
+    animation: "fadeInDown",
+    separator: ",",
+    speed: 2000,
+  });
+
+  $('.placeholder').show()
+
+  $("#inputField").focus(function() {
+    $('.placeholder').hide();
+  }).blur(function() {
+    console.log($('#inputField').val())
+    if ($('#inputField').val() == '') {
+      $('.placeholder').show();
+    }
+  });
 });
 
 function makeUrl(params) {
