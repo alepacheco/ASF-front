@@ -55,7 +55,6 @@ $(document).ready(function () {
   $("#inputField").focus(function() {
     $('.placeholder').hide();
   }).blur(function() {
-    console.log($('#inputField').val())
     if ($('#inputField').val() == '') {
       $('.placeholder').show();
     }
@@ -113,6 +112,7 @@ function searchApi(callback) {
 }
 
 function startDictation() {
+  $('.placeholder').hide();
   const showListeningOverlay = function() {
     document.getElementById("overlay").style.display = "block";
   }
