@@ -1,0 +1,23 @@
+{
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app.js"
+    }
+  ],
+  "builds": [
+    {
+      "src": "/app.js",
+      "use": "@now/node-server"
+    }
+  ],
+  "version": 2,
+  "build": {
+    "env": {
+      "PORT": "80"
+    }
+  },
+  "env": {
+    "PORT": "80"
+  }
+}
