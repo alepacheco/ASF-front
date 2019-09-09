@@ -1,23 +1,31 @@
 {
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/parse",
       "dest": "/app.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/$1"
     }
   ],
   "builds": [
     {
       "src": "/app.js",
       "use": "@now/node-server"
-    }
+    },
+    {
+      "src": "public/**",
+      "use": "@now/static"
+    },
   ],
   "version": 2,
   "build": {
     "env": {
-      "PORT": "80"
+      "PORT": "443"
     }
   },
   "env": {
-    "PORT": "80"
+    "PORT": "443"
   }
 }
