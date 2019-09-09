@@ -1,2 +1,3 @@
 # ASF-front
-[[https://github.com/alepacheco/ASF-front/blob/master/public/demo_screenshot.png|alt=demo]]
+https://asf-front.alepacheco.now.sh/
+![alt text](https://raw.githubusercontent.com/alepacheco/ASF-front/master/public/demo_screenshot.png)
